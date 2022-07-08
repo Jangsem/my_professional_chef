@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_professional_chef/pages/einfuegung_page.dart';
 import 'package:my_professional_chef/pages/favoriten_page.dart';
 import 'package:my_professional_chef/pages/gericht_page.dart';
 import 'package:provider/provider.dart';
@@ -50,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) {
-                      return GerichtPage();
+                      return EinfuegungPage();
                     }),
                   );
                 },

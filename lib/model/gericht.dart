@@ -13,7 +13,8 @@ class Gericht {
     required this.zutaten,
     required this.beschreibung,
     required this.isFavorite,
-    required this.imageURL});
+    required this.imageURL
+  });
 
   String getName(){
     return name;

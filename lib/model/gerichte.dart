@@ -8,10 +8,10 @@ class Gerichte extends ChangeNotifier {
 
   Gerichte(){
     _gerichte = [
-      Gericht(name: "Carbonara", zutaten: "zutaten", beschreibung: "Beste Spaghetti", isFavorite: true, imageURL: 'assets/images/carbonara.jpg',),
-      Gericht(name: "Margherita", zutaten: "zutaten", beschreibung: "Beste Pizza", isFavorite: true, imageURL: 'assets/images/margherita.jpg',),
-      Gericht(name: "Cheeseburger ", zutaten: "zutaten", beschreibung: "Beste Burger", isFavorite: true, imageURL: 'assets/images/cheeseburger.png',),
-      Gericht(name: "Momo", zutaten: "zutaten", beschreibung: "Beste baba tschok", isFavorite: true, imageURL: 'assets/images/momo.png',)
+      Gericht(name: "Carbonara", zutaten: "Spaghetti, Sauce, Fleisch", beschreibung: "Beste Spaghetti", isFavorite: false, imageURL: 'assets/images/carbonara.jpg',),
+      Gericht(name: "Margherita", zutaten: "Teig, Wasser, Tomatensauce", beschreibung: "Beste Pizza", isFavorite: false, imageURL: 'assets/images/margherita.jpg',),
+      Gericht(name: "Cheeseburger ", zutaten: "Käsescheibe, Burgerbrot, Patty", beschreibung: "Beste Burger", isFavorite: true, imageURL: 'assets/images/cheeseburger.png',),
+      Gericht(name: "Momo", zutaten: "Fleisch/Vegi, Teig, Wasser", beschreibung: "Beste baba tschok", isFavorite: true, imageURL: 'assets/images/momo.png',)
 
     ];
   }
