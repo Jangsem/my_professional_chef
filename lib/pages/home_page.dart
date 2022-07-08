@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_professional_chef/pages/einfuegung_page.dart';
 import 'package:my_professional_chef/pages/favoriten_page.dart';
 import 'package:my_professional_chef/pages/gericht_page.dart';
-import 'package:provider/provider.dart';
 import 'package:shake/shake.dart';
-
-import '../model/gerichte.dart';
-//import 'einfuegung_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -33,14 +29,12 @@ class _HomePageState extends State<HomePage> {
           child: Text("My professional Chef"),
         ),
       ),
-      body:
-      Center(
+      body: Center(
         child: Column(children: [
           Container(
-            height: 400,
-            width: 400,
-              child: Image.asset('assets/images/chefkoch.png')
-          ),
+              height: 400,
+              width: 400,
+              child: Image.asset('assets/images/chefkoch.png')),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(

@@ -5,6 +5,7 @@ import 'dart:io';
 
 import 'package:my_professional_chef/model/gericht.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../model/gerichte.dart';
 
@@ -21,22 +22,22 @@ class _EinfuegungPageState extends State<EinfuegungPage> {
   final ctrlZutaten = TextEditingController();
 
   final String imagefolder = "assets/bilder";
-
-  final _formKey = GlobalKey<_EinfuegungPageState>();
-  late PickedFile image;
-  late String path;
-  late File tmpFile;
+  late File _image;
+  late String _imagepath;
 
   Future pickImage() async {
-    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    var image =
+        (await ImagePicker().pickImage(source: ImageSource.gallery)) as File;
     if (image == null) return;
-    tmpFile = File(image.path);
-    String path = await getApplicationDocumentsDirectory().path;
-    tmpFile = await tmpFile.copy('$imagefolder/$path');
+    final File newImage = await image.copy(imagefolder+"/kebab.jpg");
+    _imagepath = imagefolder+"/kebab.jpg";
+    setState(() {
+      _image = newImage;
+    });
   }
 
-  void dispose() {
-    super.dispose();
+  void initState() {
+    super.initState();
   }
 
   @override
@@ -118,7 +119,7 @@ class _EinfuegungPageState extends State<EinfuegungPage> {
                             zutaten: ctrlZutaten.text,
                             beschreibung: ctrlBeschreibung.text,
                             isFavorite: true,
-                            imageURL: path);
+                            imageURL: "_imagepath");
                         gerichte.add(gericht);
                         ctrlZutaten.clear();
                         ctrlBeschreibung.clear();
